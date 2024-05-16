@@ -1,1 +1,714 @@
-Init
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Outfit Anyone">
+  <meta property="og:title" content="Outfit Anyone" />
+  <meta property="og:description"
+    content="Outfit Anyone: Ultra-high quality virtual try-on for Any Clothing and Any Person " />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/video_t1.png" />
+  <meta property="og:image:width" content="2412" />
+  <meta property="og:image:height" content="1394" />
+
+
+  <meta name="twitter:title" content="Outfit Anyone">
+  <meta name="twitter:description"
+    content="Outfit Anyone: Ultra-high quality virtual try-on for Any Clothing and Any Person ">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/video_t1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Image-to-Video">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Outfit Anyone</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+        </div>
+      </div> 
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Personalized AI-Driven Virtual Try-On</h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">AI Team, PROXGLOBAL</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                </span>
+
+<!--                 <span class="link-block">
+                    <a
+                      href="https://huggingface.co/spaces/HumanAIGC/OutfitAnyone"
+                      class="external-link button is-normal is-rounded"
+                      style="background: #ffbf00"
+                    >
+                      <span class="icon">
+                        <i class="far fa-grin-tears"></i>
+                      </span>
+                      <span>HuggingFace</span>
+                    </a>
+                </span> -->
+
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2311.17117.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <!-- <div class="hero-body"> -->
+        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="content/video/teaser.mp4" type="video/mp4">
+        </video> -->
+        <!-- <div id="results-carousel44" class="carousel results-carousel"> -->
+          <style>
+            .teaser-group {
+              display: flex;
+              justify-content: space-between;
+            }
+            .teaser-group img {
+              width: 48%; /* 各占一半，留下一些间隔 */
+              object-fit: cover; /* 保持图片纵横比 */
+            }
+          </style>
+          <div id="group1" class="teaser-group"></div>
+          <div id="group2" class="teaser-group"></div>
+        <!-- </div> -->
+
+      <!-- </div> -->
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Virtual try-on technologies are being rigorously evaluated using the latest models and actual user data to assess performance and provide insights. This paper presents a comprehensive evaluation of contemporary virtual try-on solutions, identifying common challenges and limitations in generating accurate and realistic garment fittings on diverse body types. To enhance user experience across various scenarios, a new pipeline is proposed that integrates multiple models. This multi-model approach aims to improve the fidelity and adaptability of virtual try-ons, ensuring more personalized and realistic results. This research not only provides a critical analysis of existing systems but also advances the field by suggesting a scalable and versatile framework capable of handling complex scenarios in virtual garment fitting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Method -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2">Proposed Method</h2>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img src="content/images/framework/fm.jpg" alt="MY ALT TEXT" style="width: 70%; height: 70%;" />
+        </div>
+        <div class="item">
+          <h2 class="content has-text-justified">
+            <p style="font-size: 1.2em;">
+              <strong>Fashion Segmentation</strong>
+              <br>
+              The first step involves segmenting the clothing item from its background. This is essential for cleanly isolating the garment to be tried on, ensuring that only the clothing item is processed in subsequent steps.
+              <br><br>
+              <strong>Human Segmentation</strong>
+              <br>
+              This step involves segmenting the human figure from the background of the input image. Accurate segmentation is crucial for properly overlaying the clothing onto the human figure.
+              <br><br>
+              <strong>Keypoint Extraction</strong>
+              <br>
+              Key anatomical points on the human body are identified, such as joints and the outlines of the body. These keypoints help in aligning the clothing item with the person’s body structure, ensuring that the garment fits correctly in terms of orientation and scale.
+              <br><br>
+              <strong>Try On Diffusion</strong>
+              <br>
+              Utilizing a diffusion model, the segmented clothing item is intelligently mapped onto the segmented human figure, considering the keypoints to adapt the clothing to the pose and proportions of the person. This model is responsible for handling the complex deformations of the garment.
+              <br><br>
+              <strong>Faceswap</strong>
+              <br>
+              In this optional step, the face of the person in the try-on image can be swapped with another face. This could be used for privacy reasons or to allow users to see how the outfit looks on different people.
+              <br><br>
+              <strong>Image Generation</strong>
+              <br>
+              This step can either generate a new image of a person based on specified attributes like gender, age, height, and body width, or enhance the realism of the composited image in the try-on application.
+              <br><br>
+              The diagram also depicts an integrated flow where user inputs, such as personal dimensions and clothing choices, are processed through these technological steps to produce a realistic simulation of how different outfits would look on them. This method is particularly advantageous for online shopping, allowing users to preview outfits virtually, which can enhance user experience and potentially increase sales for retailers.
+          </p>
+          
+          </h2>
+
+          <!-- <h2 class="title is-3">Post-Hoc Refiner</h2> -->
+          <div class="item">
+            <!-- <div style="display: flex; justify-content: center; align-items: center;">
+              <img src="content/images/framework/refiner.jpg" alt="MY ALT TEXT" style="width: 70%; height: 70%;" />
+            </div> -->
+          <!-- <h2 class="content has-text-justified">
+            <p style="font-size: 1.2em;">To enhance the texture and authenticity of clothing and skin, 
+              we have developed <b>Refiner</b>, a tool that takes our generated results to the next level by improving their quality. 
+              This allows us to achieve a true-to-life fitting effect.</p>
+          </h2> -->
+        </div>
+    </div>
+  </section>
+  <!-- End Method -->
+
+  <style>
+    .gifImage:hover {
+      opacity: 0.8;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    .paused {
+      animation-play-state: paused;
+    }
+
+  </style>
+  
+
+<head>
+    <title>place gif</title>
+    <style>
+        .gif-container {
+            display: flex;
+        }
+
+        .gif {
+            width: 660px; /* 设置 GIF 的宽度 */
+            height: 400px; /* 设置 GIF 的高度 */
+        }
+    </style>
+</head>
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Various Try-On: Research and Results</h2>
+        <br></br>
+        <!-- Outfit Swapping -->
+        <h3 class="title is-4">Outfit Anyone</h3>
+        <h2 class="content has-text-justified">
+          <p style="font-size: 1.em;">HR-VTON (High-Resolution Virtual Try-On Network) represents a significant advancement in the VTON field by prioritizing high-resolution image generation to ensure the visual quality and fidelity of the output. The core innovation of HR-VTON lies in its multi-stage architecture, which progressively refines the quality of synthesized images. This methodology incorporates several stages, including a coarse-level garment warping phase and a fine-level detail enhancement phase.
+          <br><br> The garment warping phase employs a geometry-aware module that aligns the clothing with the target body's pose and shape, ensuring that the initial placement of the garment is both realistic and contextually appropriate. This stage leverages advanced techniques in geometric transformation to minimize distortions and maintain the integrity of garment features.
+          </p>
+        </h2> 
+
+        <!-- Different garments -->
+        <!-- <div style="display: flex; justify-content: center;align-items: center; height: 80px;">
+          <h3 class="title is-4"> Individual Garment</h3>
+        </div> -->
+     
+        <style>
+          .outfit-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          <!-- .outfit-item img {
+            width: 100%; /* 各占一半，留下一些间隔 */
+            object-fit: cover; /* 保持图片纵横比 */
+          } -->
+          .item-gif-container {
+            width: 80%; /* 占据父元素的80%宽度 */
+            margin: auto; /* 水平方向上创建相同的空白 */
+          }
+        </style>
+        <div class="outfit-item">
+          <div class="item-gif-container">
+            <img id="gifImage3" alt="MY ALT TEXT"/>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; height: 80px;">
+          <h3 class="title is-4">Outfit Anyone</h3>
+        </div>
+          <style>
+            .outfit-group {
+              display: flex;
+              justify-content: center;
+            }
+            .outfit-group img {
+              width: 40%; /* 各占一半，留下一些间隔 */
+              object-fit: cover; /* 保持图片纵横比 */
+            }
+          </style>
+            <div class="outfit-group">
+              <img loading="lazy" id="gifImage1" alt="MY ALT TEXT" />
+              <img loading="lazy" id="gifImage2" alt="MY ALT TEXT" />
+            </div>
+        <br></br>
+        <!-- End Different garments -->
+        <!-- Different bodyshapes -->
+        <h3 class="title is-4">HR-VTON</h3>
+        <h2 class="content has-text-justified">
+          <p style="font-size: 1.2em;">HR-VTON (High-Resolution Virtual Try-On Network) represents a significant advancement in the VTON field by prioritizing high-resolution image generation to ensure the visual quality and fidelity of the output. The core innovation of HR-VTON lies in its multi-stage architecture, which progressively refines the quality of synthesized images. This methodology incorporates several stages, including a coarse-level garment warping phase and a fine-level detail enhancement phase.
+
+            The garment warping phase employs a geometry-aware module that aligns the clothing with the target body's pose and shape, ensuring that the initial placement of the garment is both realistic and contextually appropriate. This stage leverages advanced techniques in geometric transformation to minimize distortions and maintain the integrity of garment features.</p>
+        </h2>
+        <div id="results-carousel44" class="carousel results-carousel">
+
+          <!-- <div style="text-align: center;">
+            <img src="content/images/style/style1.jpg" alt="MY ALT TEXT" />
+          </div>
+   -->
+          <div style="text-align: center;">
+            <img src="content/images/style/style1.jpg" height="2400" alt="MY ALT TEXT" />
+        </div>
+        
+
+          <!-- <div class="item item-video1">
+            <img loading="lazy" src="content/images/style/style6.jpg" height="900" alt="MY ALT TEXT" />
+          </div> -->
+<!-- 
+          <div class="item item-video1">
+            <img loading="lazy" src="content/images/style/style3.jpg" height="900" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video1">
+            <img loading="lazy" src="content/images/style/style4.jpg" height="900" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video1">
+            <img loading="lazy" src="content/images/style/style5.jpg" height="900" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/style/style2.jpg" height="900" alt="MY ALT TEXT" />
+          </div>
+  
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/style/style8.jpg" height="900" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/style/style7.jpg" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/style/style9.jpg" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/style/style10.jpg" alt="MY ALT TEXT" />
+          </div> -->
+        </div>
+        <br></br>
+        <!-- End Different bodyshapes -->
+        <!-- Different bodyshapes -->
+        <h3 class="title is-4">Various Body Shapes</h3>
+        <h2 class="content has-text-justified">
+          <p style="font-size: 1.4em;">Our model demonstrates the ability to generalize to various body types, including those that are fit, curve and petite, 
+            thereby catering to the try-on demands of individuals from all walks of life.</p>
+        </h2>
+        <div id="results-carousel22" class="carousel results-carousel">
+          <div class="item item-video1">
+            <img src="content/images/bs/3.jpg" alt="MY ALT TEXT" />
+          </div>
+  
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/bs/2.jpg" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/bs/1.jpg" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/bs/4.jpg" alt="MY ALT TEXT" />
+          </div>
+
+          <div class="item item-video2">
+            <img loading="lazy" src="content/images/bs/5.jpg" alt="MY ALT TEXT" />
+          </div>
+        </div>
+        <br></br>
+        <!-- End Different bodyshapes -->
+     
+        <!--  Anime -->
+        <h3 class="title is-4">Anime</h3>
+        <h2 class="content has-text-justified">
+          <p style="font-size: 1.4em;">we demonstrate the powerful generalization ability of our model, which can support the creation of new animation characters.</p>
+        </h2>
+        <div id="results-carousel44" class="carousel results-carousel">
+          <div class="gif-container">
+            <img loading="lazy" src="content/gifs/1.gif" class="gif" height="600" />
+          </div>
+
+          <div class="gif-container">
+            <img loading="lazy" src="content/gifs/2.gif" class="gif" height="600" />
+          </div>
+        </div>
+        <!--End  Anime -->
+      </div>
+    </div>
+</section>
+
+<!-- 
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h3 class="title is-4">Refiner</h3>
+        <p style="font-size: 1.4em;">Furthermore, We showcase the effects before and after using the <b>Refiner</b>, demonstrating its ability to significantly enhance the texture and realism of the clothing, while maintaining consistency in the apparel.</p>
+
+        <!-- <p style="text-align: center; font-size: 1.2em;">(Left: <b style="color:rgb(110, 110, 227)">Refiner</b>; Right: <b style="color:rgb(181, 121, 121)">Original</b>)</p> -->
+
+        <div id="results-carousel22" class="carousel results-carousel">
+
+          <div id="example3" class="bal-container-big">
+            <div class="bal-after">
+              <img src="content/images/refiner2/r6.jpg">
+              <div class="bal-afterPosition ">
+                <!-- <b style="color:rgb(181, 121, 121)">Original</b> -->
+              </div>
+            </div>
+
+            <div class="bal-before">
+              <div class="bal-before-inset">
+                <img loading="lazy" src="content/images/refiner2/r5.jpg">
+                <div class="bal-beforePosition ">
+                  <!-- <b style="color: rgb(110, 110, 227);">Refiner</b> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="bal-handle">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+
+          <div id="example4" class="bal-container-big">
+            <div class="bal-after">
+              <img loading="lazy" src="content/images/refiner2/r8.jpg">
+              <div class="bal-afterPosition ">
+                <!-- <b style="color:rgb(181, 121, 121)">Original</b> -->
+              </div>
+            </div>
+
+            <div class="bal-before">
+              <div class="bal-before-inset">
+                <img loading="lazy" src="content/images/refiner2/r7.jpg">
+                <div class="bal-beforePosition ">
+                  <!-- <b style="color: rgb(110, 110, 227);">Refiner</b> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="bal-handle">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+
+          <div id="example1" class="bal-container-big">
+            <div class="bal-after">
+              <img loading="lazy" src="content/images/refiner2/r4.jpg">
+              <div class="bal-afterPosition ">
+                <!-- <b style="color:rgb(181, 121, 121)">Original</b> -->
+              </div>
+            </div>
+
+            <div class="bal-before">
+              <div class="bal-before-inset">
+                <img loading="lazy" src="content/images/refiner2/r3.jpg">
+                <div class="bal-beforePosition ">
+                  <!-- <b style="color: rgb(110, 110, 227);">Refiner</b> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="bal-handle">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+
+
+          <div id="example2" class="bal-container-big">
+            <div class="bal-after">
+              <img loading="lazy" src="content/images/refiner2/r2.jpg">
+              <div class="bal-afterPosition ">
+                <!-- <b style="color:rgb(181, 121, 121)">Original</b> -->
+              </div>
+            </div>
+
+            <div class="bal-before">
+              <div class="bal-before-inset">
+                <img loading="lazy" src="content/images/refiner2/r1.jpg">
+                <div class="bal-beforePosition ">
+                  <!-- <b style="color: rgb(110, 110, 227);">Refiner</b> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="bal-handle">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- Video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <!-- <h2 class="title is-3">Outfit Anyone + <b style="color: rgb(170, 106, 28);">Animate Anyone</b></h2>
+        <h2 class="content has-text-centered">
+          <p style="font-size: 1.4em;">We demonstrate the integration of <b>Outfit Anyone</b> with <b>Animate Anyone</b>, a state-of-the-art pose-to-video model, to achieve outfit changes and motion video generation for any character.</p>
+        </h2> -->
+        <div >
+          <div class="item item-video1" style="text-align: center;">
+            <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <!-- <source loading="lazy" src="content/video/demo_07.mp4" type="video/mp4"> -->
+            </video>
+          </div>
+          <!-- <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">\
+              <source src="content/video/demo_2.mp4" type="video/mp4">
+            </video>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End video carousel -->
+  
+  
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Wardrobe</b></h2>
+        <!-- <h2 class="content has-text-centered">
+          <p style="font-size: 1.4em;">We demonstrate the integration of <b>Outfit Anyone</b> with <b>Animate Anyone</b>, a state-of-the-art (SOTA) pose-to-video model, to achieve outfit changes and motion video generation for any character.</p>
+        </h2> -->
+        <div >
+          <!-- <div class="item item-video1" style="text-align: center;">
+            <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <!-- <source loading="lazy" src="content/video/teaser.mp4" type="video/mp4"> -->
+            </video> --> -->
+          </div>
+          <!-- <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">\
+              <source src="content/video/demo_2.mp4" type="video/mp4">
+            </video>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    </section> -->
+
+
+  <!-- <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <!-- <div class="content" style="text-align: center;">
+            <p>
+              This project is intended solely for academic research and effect demonstration. No commercial benefits are derived from it. 
+              Most models and clothing images used are from internet and public datasets (VITON, DressCode).
+               All images and brands are the property of their respective owners.
+            </p>
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Template</a> which was adopted from the <a href="https://nerfies.github.io"
+                target="_blank">Nerfies</a> project page.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- <script src="static/js/script.js"></script> -->
+<!-- 
+  <script>
+    new BeforeAfter({
+      id: '#example1'
+    });
+    new BeforeAfter({
+      id: '#example2'
+    });
+    new BeforeAfter({
+      id: '#example3'
+    });
+    new BeforeAfter({
+      id: '#example4'
+    });
+    new BeforeAfter({
+      id: '#example6'
+    });
+    new BeforeAfter({
+      id: '#example7'
+    });
+
+  </script> -->
+
+<!-- <script>
+  var gifImage = document.getElementById('gifImage');
+  var isPaused = false;
+
+  gifImage.addEventListener('mouseenter', function() {
+    gifImage.src = gifImage.src;
+    isPaused = true;
+  });
+
+  gifImage.addEventListener('mouseleave', function() {
+    if (isPaused) {
+      gifImage.src = gifImage.src;
+      isPaused = false;
+    }
+  });
+</script> -->
+
+  <script>
+    bulmaCarousel.attach('#results-carousel11', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      infinite: true,
+      autoplay: false,
+    });
+    bulmaCarousel.attach('#results-carousel22', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: true,
+      autoplay: false,
+    });
+    bulmaCarousel.attach('#results-carousel44', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      infinite: false,
+      autoplay: false,
+    });
+  </script>
+
+  <script> 
+    document.getElementById('gifImage3').src = 'content/gifs/Item.gif';
+    document.getElementById('gifImage1').src = 'content/gifs/s1.gif';
+    document.getElementById('gifImage2').src = 'content/gifs/s2.gif';
+
+    // 图片资源路径
+    const images = [
+      'content/teaser/t3.gif',
+      'content/teaser/t4.gif',
+      'content/teaser/t1.gif',
+      'content/teaser/t2.gif'
+    ];
+
+    // 获取要插入图片的div
+    const group1 = document.getElementById('group1');
+    const group2 = document.getElementById('group2');
+
+    // 创建并插入前两张图片
+    for (let i = 0; i < 2; i++) {
+      const img = document.createElement('img');
+      img.src = images[i];
+      img.loading = 'lazy';
+      img.alt = '图片' + (i+1);
+      group1.appendChild(img);
+    }
+
+    // 创建并插入后两张图片
+    for (let i = 2; i < images.length; i++) {
+      const img = document.createElement('img');
+      img.src = images[i];
+      img.loading = 'lazy';
+      img.alt = '图片' + (i+1);
+      group2.appendChild(img);
+    }
+
+  </script>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+<!-- Default Statcounter code for outfit-anyone
+https://humanaigc.github.io/outfit-anyone/ -->
+<script type="text/javascript">
+  var sc_project=12948235; 
+  var sc_invisible=1; 
+  var sc_security="8cca28b8"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img class="statcounter"
+  src="https://c.statcounter.com/12948235/0/8cca28b8/1/" alt="Web Analytics"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+
+</html>
